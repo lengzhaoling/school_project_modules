@@ -8,6 +8,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.cache.annotation.Cacheable;
 
 import java.time.LocalDateTime;
 
@@ -68,9 +69,9 @@ public class BookController {
      */
     @ApiOperation(value = "根据ID获取书籍详情", notes = "查询书籍详情，并将该书浏览次数加1")
     @GetMapping("/detail")
+    @Cacheable(value = "bookCache",key = "#id")
     public SaResult getBookDetail(
-            @ApiParam(value = "书籍ID", required = true)
-            @RequestParam("id") Long id) {
+            @ApiParam(value = "书籍ID", required = true, example = "1") @RequestParam("id") Long id) {
         return bookService.getBookDetail(id);
     }
 

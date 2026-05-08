@@ -2,8 +2,8 @@ spring:
   mail:
     port: 587
     host: smtp.qq.com
-    username: 3535954238@qq.com      #发送方的QQ号码
-    password: ypxhrvksnzphchbb                       #这块密码是QQ邮箱申请的授权码
+    username: 2862841951@qq.com    #发送方的QQ号码
+    password: prfmrwysrqsndghb                     #这块密码是QQ邮箱申请的授权码
     protocol: smtp
     properties:
       mail:

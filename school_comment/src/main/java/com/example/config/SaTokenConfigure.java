@@ -62,6 +62,7 @@ public class SaTokenConfigure implements WebMvcConfigurer {
                     freePaths.add("/common/upload");
                     freePaths.add("/book/banner");
 
+
                     // 业务白名单（从配置文件读取）
                     List<String> whitePaths = whiteListConfig.getPaths();
                     if (whitePaths != null && !whitePaths.isEmpty()) {
@@ -86,7 +87,7 @@ public class SaTokenConfigure implements WebMvcConfigurer {
 
                 }))
                 .addPathPatterns("/**")
-                .excludePathPatterns("/error");
+                .excludePathPatterns("/book/ai/**");
     }
 
     @Override
